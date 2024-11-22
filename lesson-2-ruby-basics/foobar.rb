@@ -13,5 +13,3 @@ def foobar
     first + second
   end
 end
-
-puts foobar

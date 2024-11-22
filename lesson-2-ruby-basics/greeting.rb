@@ -16,5 +16,3 @@ def greeting
     "Hi #{first_name} #{last_name}, it's time to get down to business!"
   end
 end
-
-puts greeting
