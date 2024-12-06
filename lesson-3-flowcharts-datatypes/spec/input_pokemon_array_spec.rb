@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require_relative '../pokemon_array'
+require_relative '../input_pokemon_array'
 
-RSpec.describe 'Pokemon array' do
+RSpec.describe '#input_pokemon_array' do
   before do
     allow_any_instance_of(Kernel).to receive(:print)
     allow_any_instance_of(Kernel).to receive(:puts)
   end
 
-  it 'zero' do
+  it 'receives 0 pokemon' do
     allow_any_instance_of(Kernel).to receive(:gets).and_return('0')
-    expect(pokemon_array).to eq([])
+    expect(input_pokemon_array).to eq([])
   end
 
-  it 'one' do
+  it 'receives 1 pokemon' do
     allow_any_instance_of(Kernel).to receive(:gets).and_return('1', 'Pikachu', 'yellow')
-    expect(pokemon_array).to eq([{ name: 'Pikachu', color: 'yellow' }])
+    expect(input_pokemon_array).to eq([{ name: 'Pikachu', color: 'yellow' }])
   end
 
-  it 'two' do
+  it 'receives 2 pokemon' do
     allow_any_instance_of(Kernel).to receive(:gets).and_return('2', 'eevee', 'Brown', 'BULBASAUR', 'green')
-    expect(pokemon_array).to eq([{ name: 'eevee', color: 'Brown' }, { name: 'BULBASAUR', color: 'green' }])
+    expect(input_pokemon_array).to eq([{ name: 'eevee', color: 'Brown' }, { name: 'BULBASAUR', color: 'green' }])
   end
 end

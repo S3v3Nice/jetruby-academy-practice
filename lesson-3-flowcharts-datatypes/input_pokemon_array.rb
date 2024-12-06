@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-def pokemon_array
+def input_pokemon_array
   pokemon_array = []
 
   print 'Pokemon count: '
