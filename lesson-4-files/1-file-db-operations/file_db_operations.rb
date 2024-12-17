@@ -20,7 +20,7 @@ end
 def find(id)
   ensure_file_exists
   File.foreach(FILE_NAME).with_index do |line, i|
-    if i == id
+    if id == i + 1
       puts line
       break
     end
@@ -31,7 +31,7 @@ end
 def where(pattern)
   ensure_file_exists
   File.foreach(FILE_NAME).with_index do |line, i|
-    puts line if line.include? pattern
+    puts "#{i}: #{line}" if line.include?(pattern)
   end
 end
 
@@ -40,7 +40,7 @@ def update(id, new_value)
   ensure_file_exists
   buffer_file = File.open("buffer_#{FILE_NAME}", 'w')
   File.foreach(FILE_NAME).with_index do |line, i|
-    buffer_file.puts(id == i ? new_value : line)
+    buffer_file.puts(id == i + 1 ? new_value : line)
   end
 
   FileUtils.mv(buffer_file, FILE_NAME)
@@ -52,7 +52,7 @@ def delete(id)
   ensure_file_exists
   buffer_file = File.open("buffer_#{FILE_NAME}", 'w')
   File.foreach(FILE_NAME).with_index do |line, i|
-    buffer_file.puts(line) if i != id
+    buffer_file.puts(line) unless id == i + 1
   end
 
   FileUtils.mv(buffer_file, FILE_NAME)
