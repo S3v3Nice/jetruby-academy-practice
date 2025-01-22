@@ -18,11 +18,16 @@ class PostsController
 
   def show
     print 'Post ID: '
-    id = gets.chomp.to_i
+    id_str = gets.chomp
+    id = id_str.to_i
+    unless id.to_s == id_str
+      puts 'Post ID must be an integer!'
+      return
+    end
 
     post = @posts[id]
     if post.nil?
-      puts "Post with id #{id} is not found!"
+      puts "Post with ID #{id} is not found!"
       return
     end
 
@@ -42,10 +47,15 @@ class PostsController
 
   def update
     print 'Post ID: '
-    id = gets.chomp.to_i
+    id_str = gets.chomp
+    id = id_str.to_i
+    unless id.to_s == id_str
+      puts 'Post ID must be an integer!'
+      return
+    end
 
     unless @posts.key? id
-      puts "Post with id #{id} is not found!"
+      puts "Post with ID #{id} is not found!"
       return
     end
 
@@ -58,10 +68,15 @@ class PostsController
 
   def destroy
     print 'Post ID: '
-    id = gets.chomp.to_i
+    id_str = gets.chomp
+    id = id_str.to_i
+    unless id.to_s == id_str
+      puts 'Post ID must be an integer!'
+      return
+    end
 
     unless @posts.key? id
-      puts "Post with id #{id} is not found!"
+      puts "Post with ID #{id} is not found!"
       return
     end
 
