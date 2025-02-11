@@ -1,0 +1,10 @@
+Ivan Ivanov 20
+Peter Petrov 21
+Alexey Smirnov 25
+Dmitry Kuznetsov 19
+Andrey Popov 21
+Sergey Vasilyev 25
+Michael Novikov 20
+Nikolay Morozov 20
+Vladimir Sokolov 26
+Artem Pavlov 19
