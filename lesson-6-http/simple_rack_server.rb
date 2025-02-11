@@ -23,7 +23,7 @@ class SimpleRackServer
         {
           'REQUEST_METHOD' => method,
           'PATH_INFO' => path,
-          'QUERY_STRING' => query,
+          'QUERY_STRING' => query
         }
       )
 

@@ -14,7 +14,6 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.5.21, Remote: ruby-3.3.5-p100) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.5.1, Remote: ruby-3.3.5-p100) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.7, Remote: ruby-3.3.5-p100) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.1.0, Remote: ruby-3.3.5-p100) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v3.13.0, Remote: ruby-3.3.5-p100) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.13.2, Remote: ruby-3.3.5-p100) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.13.3, Remote: ruby-3.3.5-p100) [gem]" level="application" />

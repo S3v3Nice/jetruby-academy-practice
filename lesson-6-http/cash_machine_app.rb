@@ -44,13 +44,8 @@ class CashMachineApp
   def handle_withdraw(request)
     value = request.params['value']&.to_f
 
-    unless value
-      return response(400, 'Missing required query parameter \'value\'')
-    end
-
-    if value.negative?
-      return response(400, 'Value must be greater than 0')
-    end
+    return response(400, 'Missing required query parameter \'value\'') unless value
+    return response(400, 'Value must be greater than 0') if value.negative?
 
     if value > @cash_machine.balance
       return response(400, "Value is greater than current balance (#{@cash_machine.balance})")

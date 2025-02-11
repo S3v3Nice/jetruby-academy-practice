@@ -12,9 +12,7 @@ class CashMachine
   end
 
   def deposit(amount)
-    if amount.negative?
-      raise 'Invalid deposit amount!'
-    end
+    raise 'Invalid deposit amount!' if amount.negative?
 
     @balance += amount
     save_balance
