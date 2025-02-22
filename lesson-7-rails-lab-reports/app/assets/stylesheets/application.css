@@ -8,3 +8,21 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+    --surface-border: #d3d7db;
+    --surface-ground: #f0f0f0;
+    --surface-overlay: #ffffff;
+    --text-color: #2d3b4b;
+
+    background-color: var(--surface-ground);
+    color: var(--text-color);
+}
+
+* {
+    border-color: var(--surface-border);
+}
+
+.surface-overlay {
+    background-color: var(--surface-overlay);
+}
