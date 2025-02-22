@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_19_122706) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_22_191712) do
   create_table "lab_reports", force: :cascade do |t|
     t.integer "user_id"
-    t.string "title"
+    t.string "title", null: false
     t.string "description"
     t.string "grade"
     t.datetime "created_at", null: false
@@ -22,9 +22,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_19_122706) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "email", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
