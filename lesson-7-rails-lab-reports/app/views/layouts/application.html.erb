@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Rails Lab Reports" %></title>
+    <title><%= [content_for(:title), "Rails Lab Reports"].compact.join(" - ") %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -26,8 +26,26 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <main class="container mx-auto mt-28 px-5 flex flex-col gap-4">
+      <div class="surface-overlay rounded-lg border flex items-center">
+        <% if content_for?(:previous_url) %>
+          <%= link_to yield(:previous_url) do %>
+            <i class="fa-solid fa-arrow-left p-4"></i>
+          <% end %>
+          <div class="flex flex-col py-2">
+            <%= link_to yield(:previous_url) do %>
+              <p class="text-xs opacity-70"><%= yield(:previous_title) %></p>
+            <% end %>
+            <h1 class="text-xl sm:text-2xl font-semibold"><%= yield :title %></h1>
+          </div>
+        <% else %>
+          <h1 class="text-xl sm:text-2xl font-semibold px-4 py-2"><%= yield :title %></h1>
+        <% end %>
+      </div>
+
+      <div class="surface-overlay rounded-lg overflow-hidden border">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>

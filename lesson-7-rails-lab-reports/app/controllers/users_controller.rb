@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
 
   def index
+    @previous_page = ["Lab Reports", lab_reports_path]
     @users = User.includes(:lab_reports).order(created_at: :desc).all
   end
 
@@ -31,12 +32,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if @user.lab_reports.exists?
-      redirect_to users_path, alert: "Can't delete user with lab reports."
-    else
-      @user.destroy
-      redirect_to users_path, notice: "User was successfully deleted."
-    end
+    @user.destroy
+    redirect_to users_path, notice: "User was successfully deleted."
   end
 
   private
