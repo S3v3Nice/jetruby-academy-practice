@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_22_191712) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_25_115238) do
   create_table "lab_reports", force: :cascade do |t|
     t.integer "user_id"
-    t.string "title", null: false
-    t.string "description"
+    t.string "title", limit: 250, null: false
+    t.string "description", limit: 500
     t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -22,10 +22,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_22_191712) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "email", limit: 150, null: false
+    t.string "first_name", limit: 100, null: false
+    t.string "last_name", limit: 100, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
+
+  add_foreign_key "lab_reports", "users", on_delete: :nullify
 end
