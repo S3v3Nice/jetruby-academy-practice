@@ -1,0 +1,7 @@
+<% content_for :title, "Edit Lab Report" %>
+<% content_for :previous_title, @lab_report.title %>
+<% content_for :previous_url, lab_report_path(@lab_report) %>
+
+<div class="p-4">
+  <%= render "form", lab_report: @lab_report, users: @users %>
+</div>

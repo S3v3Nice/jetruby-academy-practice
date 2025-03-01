@@ -1,6 +1,6 @@
 <% content_for :title, "Edit User" %>
-<% content_for :previous_title, "Users" %>
-<% content_for :previous_url, users_path %>
+<% content_for :previous_title, @user.full_name %>
+<% content_for :previous_url, user_path(@user) %>
 
 <div class="p-4">
   <%= render "form", user: @user %>

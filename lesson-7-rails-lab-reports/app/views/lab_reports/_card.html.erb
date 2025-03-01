@@ -1,0 +1,21 @@
+<div class="border px-4 py-3 rounded bg-gray-50 transition flex items-center">
+  <div class="w-full">
+    <%= link_to lab_report_path(lab_report) do %>
+      <p class="font-semibold hover:text-blue-700">
+        <%= lab_report.title %>
+      </p>
+    <% end %>
+    <% if lab_report.user %>
+      <%= link_to user_path(lab_report.user), class: "hover:text-blue-700" do %>
+        <div class="inline-flex gap-2 items-center opacity-85 text-xs">
+          <i class="fa-regular fa-user"></i>
+          <p><%= lab_report.user.full_name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if lab_report.grade %>
+    <p class="text-xl font-semibold <%= grade_color_classes(lab_report.grade) %>"><%= lab_report.grade %></p>
+  <% end %>
+</div>

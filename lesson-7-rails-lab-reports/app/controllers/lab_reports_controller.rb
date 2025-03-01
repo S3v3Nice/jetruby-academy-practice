@@ -1,5 +1,6 @@
 class LabReportsController < ApplicationController
   before_action :set_lab_report, only: %i[show edit update destroy]
+  before_action :set_users, only: %i[new edit]
 
   def index
     @lab_reports = LabReport.includes(:user).all
@@ -42,6 +43,10 @@ class LabReportsController < ApplicationController
 
   def set_lab_report
     @lab_report = LabReport.find(params[:id])
+  end
+
+  def set_users
+    @users = User.all
   end
 
   def lab_report_params

@@ -1,0 +1,48 @@
+<%= form_with model: lab_report, class: "max-w-lg mx-auto" do |form| %>
+  <div class="flex flex-col gap-4">
+
+    <!-- Title -->
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "w-full mt-1 px-4 py-2 border rounded focus:ring focus:ring-blue-300 outline-none" %>
+      <% lab_report.errors.full_messages_for(:title).each do |error| %>
+        <div class="text-red-600 text-sm mt-1"><%= error %></div>
+      <% end %>
+    </div>
+
+    <!-- Description -->
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "w-full mt-1 px-4 py-2 border rounded focus:ring focus:ring-blue-300 outline-none" %>
+      <% lab_report.errors.full_messages_for(:description).each do |error| %>
+        <div class="text-red-600 text-sm mt-1"><%= error %></div>
+      <% end %>
+    </div>
+
+    <!-- Grade -->
+    <div>
+      <%= form.label :grade %>
+      <%= form.select :grade, %w[A B C D E FX F], { include_blank: "–" }, { class: "w-full mt-1 px-4 py-2 border rounded focus:ring focus:ring-blue-300 outline-none" } %>
+      <% lab_report.errors.full_messages_for(:grade).each do |error| %>
+        <div class="text-red-600 text-sm mt-1"><%= error %></div>
+      <% end %>
+    </div>
+
+    <!-- User -->
+    <div>
+      <%= form.label :user_id %>
+      <%= form.select :user_id,
+                      User.all.map { |user| [user.full_name, user.id] },
+                      { include_blank: "–" },
+                      { class: "w-full mt-1 px-4 py-2 border rounded focus:ring focus:ring-blue-300 outline-none" } %>
+      <% lab_report.errors.full_messages_for(:user_id).each do |error| %>
+        <div class="text-red-600 text-sm mt-1"><%= error %></div>
+      <% end %>
+    </div>
+
+    <!-- Submit -->
+    <div>
+      <%= form.submit class: "w-full text-white py-2 px-4 rounded cursor-pointer bg-blue-500 hover:bg-blue-600 transition duration-200" %>
+    </div>
+  </div>
+<% end %>
