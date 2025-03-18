@@ -7,9 +7,13 @@
     <i class="fa-solid fa-plus"></i>
   <% end %>
 
-  <div class="mt-3 flex flex-col gap-2">
-    <% @lab_reports.each do |lab_report| %>
-      <%= render "card", lab_report: lab_report %>
-    <% end %>
-  </div>
+  <% if @lab_reports.empty? %>
+    <p class="mt-4 opacity-80">No lab reports yet.</p>
+  <% else %>
+    <div class="mt-3 flex flex-col gap-2">
+      <% @lab_reports.each do |lab_report| %>
+        <%= render "card", lab_report: lab_report %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
