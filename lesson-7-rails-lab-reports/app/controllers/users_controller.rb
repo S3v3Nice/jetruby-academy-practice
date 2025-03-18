@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
   def index
-    @previous_page = ["Lab Reports", lab_reports_path]
+    @previous_page = [ "Lab Reports", lab_reports_path ]
     @users = User.includes(:lab_reports).order(created_at: :desc).all
   end
 
