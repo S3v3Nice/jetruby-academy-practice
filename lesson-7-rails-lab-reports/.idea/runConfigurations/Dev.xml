@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dev" type="CommandRunConfigurationType" factoryName="Gem Command">
+    <module name="rails-blog" />
+    <COMMAND_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="" />
+    <COMMAND_RUN_CONFIGURATION NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+    <COMMAND_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="false" />
+    <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="" />
+    <COMMAND_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
+    <envs>
+      <env name="PORT" value="3000" />
+      <env name="RUBY_DEBUG_OPEN" value="true" />
+      <env name="RUBY_DEBUG_LAZY" value="true" />
+    </envs>
+    <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+    <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+    <COMMAND_CONFIG_SETTINGS_ID NAME="GEM_NAME" VALUE="foreman" />
+    <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_NAME" VALUE="foreman" />
+    <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_ARGS" VALUE="start -f Procfile.dev" />
+    <COMMAND_CONFIG_SETTINGS_ID NAME="WORKING_DIR" VALUE="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,7 @@
+<% content_for :title, "New User" %>
+<% content_for :previous_title, "Users" %>
+<% content_for :previous_url, users_path %>
+
+<div class="p-4">
+  <%= render "form", user: @user %>
+</div>
